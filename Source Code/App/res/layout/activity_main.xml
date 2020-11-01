@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#eeeeee"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <ProgressBar
+        android:id="@+id/Horizontal_ProgressBar"
+        android:layout_width="match_parent"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_height="10dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="-2dp"
+        android:progress="90"/>
+
+    <LinearLayout
+        android:id="@+id/Search_News_Layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:background="@drawable/border"
+        android:isScrollContainer="true"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
+            <EditText
+                android:id="@+id/Search_News"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/news_title"
+                android:typeface="monospace" />
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/from_and_to"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/from"
+                    android:textColor="#424242"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@string/to"
+                    android:textColor="#424242"
+                    android:layout_weight="1.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dates"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/from_date"
+                    android:focusableInTouchMode="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:textSize="15sp"
+                    android:hint="@string/_2020_01_24"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/to_date"
+                    android:hint="@string/_2020_02_24"
+                    android:textSize="15sp"
+                    android:focusableInTouchMode="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_weight="1.02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/search_news_dates"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp">
+            <Button
+                android:id="@+id/btn_search"
+                android:text="@string/search"
+                android:textAllCaps="false"
+                android:background="@drawable/custom_button"
+                android:layout_marginLeft="55dp"
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"/>
+
+                <CheckBox
+                    android:id="@+id/current_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="currentDate"
+                    android:text="@string/current_date"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkbox_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
+            <RadioGroup
+                android:id="@+id/new_rev_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/checkBox_Newest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/Search_News"
+                android:layout_weight="1"
+                android:text="Newest" />
+
+            <RadioButton
+                android:id="@+id/checkBox_Relevance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Relevance" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/news_listView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:drawSelectorOnTop="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:layout_height="match_parent"/>
+
+
+    <ImageView
+        android:id="@+id/empty_view"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        tools:src="@drawable/nodatafound"
+        android:layout_height="match_parent"/>
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            android:layout_centerInParent="true"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</LinearLayout>

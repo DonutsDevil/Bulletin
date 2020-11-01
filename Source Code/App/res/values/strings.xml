@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bulletin</string>
+    <string name="to">To:</string>
+    <string name="from">From:</string>
+    <string name="_2020_01_24">2020-01-24</string>
+    <string name="_2020_02_24">2020-02-24</string>
+    <string name="search">Search</string>
+    <string name="current_date">Current Date</string>
+    <string name="news_title">News Title</string>
+</resources>
