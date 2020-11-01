@@ -15,13 +15,13 @@
  ## Validations 
  <img src="Images/Validations.jpg" width="150">    <img src="Images/Date_picker.jpg" width="150">
  
- You will need to Enter the from and to date in order to search for the news you want, And by default To Date is the current System date. And if you fail to do so App will show Errors in Red and Notify you.
+You will need to Enter From and To date in order to search for the news you want, and by default To Date is the current System date. If you fail to do so App will show Errors in Red Notifying you the error.
  
  
  ## Data Reterving 
  <img src="Images/no_internet.jpg" width="150"> <img src="Images/No_data_found.jpg" width="150"> 
  
-Theres Always a chances of Connection lost while Retriving data and or the news you searched "keywords" dont match any at that Case app will show Apporpritate Message Informing About the current Sitiuation of the App.
+There's Always a chances of Connection lost while Retriving data or the news "keyword" you searched for doesn't matches any Keyword, at that Case app will show Appropriate Message informing about the current Sitiuation of the App.
 
 ## INFO
 App is using Rest API and JAVA Time API to show the user what they want at realtime. Every Day the Home DashBoard news will change according to the most recent affairs in the world. 
